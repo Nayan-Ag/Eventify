@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
-  box-sizing:border-box;
-  padding:0;
-  margin:0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 .navbars {
-  background: rgba(0, 0, 0, 0.00);
+  background: rgba(0, 0, 0, 0);
 }
 .landingsection {
   position: relative;
@@ -34,15 +34,72 @@
 .content {
   position: relative;
 }
-.navitems{
-  transition:margin-top 0.2s ease-out 1ms;
+.navitems {
+  transition: margin-top 0.2s ease-out 1ms;
 }
-.navitems:hover{
-  margin-top:-8px
+.navitems:hover {
+  margin-top: -8px;
 }
-.aboutsub{
-  font-family: 'Rethink Sans', sans-serif;
+.aboutsub {
+  font-family: "Rethink Sans", sans-serif;
 }
-.abouthead{
-  font-family:'Benne', serif;
+.abouthead {
+  font-family: "Benne", serif;
+}
+.service_image {
+  filter: contrast(120%);
+}
+.service_image {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.service_btn {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+.service_btn_span{
+  z-index: 5;
+  position: relative;
+  transition: color 650ms ease;
+}
+.service_btn:hover .service_btn_span{
+  color: black;
+}
+.service_btn::after,
+.service_btn::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: white;
+  z-index: -1;
+}
+
+.service_btn::before {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.service_btn:hover:before {
+  transform: translateX(0);
+  transition: transform 350ms ease;
+}
+
+.service_btn::after {
+  z-index: 0;
+  transform: translateX(100%);
+  transition: none;
+  transition: transform 350ms ease;
+}
+
+.service_btn:hover:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 350ms 360ms ease;
 }

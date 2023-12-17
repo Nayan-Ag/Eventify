@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { RiseLoader } from "react-spinners";
 
-import { About, Hero, Navbar } from "./components";
+import { About, Hero, Navbar , Services , Contact , Footer} from "./components";
 
 import "./index.css";
 
@@ -34,6 +34,9 @@ const App = () => {
             </div>
           </div>
           <About/>
+          <Services/>
+          <Contact/>
+          <Footer/>
         </BrowserRouter>
       )}
     </div>
